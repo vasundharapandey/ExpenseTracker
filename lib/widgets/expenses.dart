@@ -1,3 +1,4 @@
+import 'package:expensetracker/widgets/chart/chart.dart';
 import 'package:expensetracker/widgets/expenses_list/expenses_list.dart';
 import 'package:expensetracker/widgets/new_expense.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +78,7 @@ class _ExpensesState extends State<Expenses> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text("Expense Tracker"),
+        title: Text("Trackify"),
         actions: [
           IconButton(
               onPressed: _openAddExpenseOverlay, icon: const Icon(Icons.add))
@@ -85,7 +86,7 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          Text('The Chart'),
+     Chart(expenses: _registeredExpenses),
           Expanded(child: mainContent),
         ],
       ),
